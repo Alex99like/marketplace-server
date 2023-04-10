@@ -6,11 +6,24 @@ import { PrismaService } from './prisma.service';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { ProductModule } from './product/product.module';
+import { ReviewModule } from './review/review.module';
+import { PaginationModule } from './pagination/pagination.module';
+import { StatisticsModule } from './statistics/statistics.module';
 import { CategoryModule } from './category/category.module';
-import { CategoryModule } from './category/category.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), AuthModule, UserModule, ProductModule, CategoryModule],
+  imports: [
+    ConfigModule.forRoot(),
+    AuthModule,
+    UserModule,
+    ProductModule,
+    CategoryModule,
+    StatisticsModule,
+    PaginationModule,
+    ReviewModule,
+    OrderModule,
+  ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })
